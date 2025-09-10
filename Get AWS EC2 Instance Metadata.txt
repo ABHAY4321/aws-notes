@@ -1,0 +1,9 @@
+====== In Linux: =====
+1. Instance Metadata Service Version 2 (IMDSv2) – a session-oriented method (Default one):
+# TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+# curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/
+
+
+2. Instance Metadata Service Version 1 (IMDSv1) – a request/response method (Old Method):
+==> Select EC2 instance -> Actions -> Instance settings -> Modify instance metadata options -> Set 'IMDSv2' to 'Optional'.
+# curl 169.254.169.254/latest/meta-data/
